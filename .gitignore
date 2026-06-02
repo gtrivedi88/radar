@@ -1,0 +1,38 @@
+# Ephemeral per-run artifacts
+intermediate/
+raw/
+
+# Runtime state artifacts (keep intelligence files, ignore runtime artifacts)
+state/fetch-errors.jsonl
+state/watermarks.json
+
+# Claude Code session data
+.claude/
+
+# Working files
+inbox.md
+
+# Upstream reference clone (kept untracked; cherry-pick as needed)
+
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+.env.local
+.env.*.local
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.log

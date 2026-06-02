@@ -1,0 +1,29 @@
+id: github-trending
+name: GitHub Trending Repositories
+type: github_watch
+config:
+  endpoint: trending_repos  # Using corrected field name as per plan specification
+  language: python
+  since: daily
+  min_stars: 100
+  sort: stars
+  order: desc
+  limit: 30
+poll_cadence: daily
+signal_type:
+  - capability
+  - trend
+audience_tags:
+  - devs_curious_ai
+  - hardcore_tech
+relevance_tags:
+  - github
+  - trending
+  - repositories
+pre_filter:
+  min_engagement: 50
+  recency_window_days: 7
+  dedup_key: title_url
+priority: 2
+fragility_tier: stable
+staleness_threshold_days: 7

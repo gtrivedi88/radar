@@ -1,0 +1,51 @@
+# Source grouping for Map-Route-Reduce synthesis
+# v1: Strategic 8-source configuration with signal hierarchy
+# v2: Full taxonomy with 80+ sources
+
+groups:
+  # Infrastructure Layer - GitHub commits, API changes, platform shifts
+  infrastructure_ai:
+    - github-trending
+    - rise-of-ai-europe
+
+  # Economic Layer - Investment flows, cost structures, revenue shifts
+  economic_flows:
+    - ai-funding-tracker
+    - asian-vc-flows
+
+  # Behavioral Layer - Developer adoption, tool usage, community patterns
+  behavioral_signals:
+    - hn-algolia
+    - stackoverflow-ai
+    - dev-community
+
+  # Network Layer - Conference topics, hiring patterns, opinion formation
+  network_intelligence:
+    - conference-intelligence
+    - thought-leaders
+
+  # Manual Layer - Operator-curated high-quality signals
+  manual_inbox:
+    - inbox_manual
+
+# Signal hierarchy for elite intelligence (priority order)
+signal_hierarchy:
+  infrastructure:     # Highest predictive value
+    - infrastructure_ai
+  economic:          # Investment and market forces
+    - economic_flows
+  behavioral:        # Developer and user adoption patterns
+    - behavioral_signals
+  network:           # Opinion formation and community signals
+    - network_intelligence
+  opinion:           # Lowest priority - manual curation
+    - manual_inbox
+
+# Enhanced MRR routing configuration for v1 synthesis
+routing:
+  # Multi-source routing with signal hierarchy weighting
+  trends:      [infrastructure_ai, economic_flows, behavioral_signals]
+  capability:  [infrastructure_ai, behavioral_signals, network_intelligence]
+  pain_points: [behavioral_signals, network_intelligence, manual_inbox]
+  bleeding_edge: [infrastructure_ai, economic_flows]
+  watch:       [network_intelligence, manual_inbox]

@@ -1,0 +1,28 @@
+id: thought-leaders
+name: Technical Thought Leaders
+type: rss
+config:
+  feed_url: https://martinfowler.com/feed.atom
+  include_content: true
+  max_entries: 15
+poll_cadence: weekly
+signal_type:
+  - network
+  - opinion
+  - leadership
+audience_tags:
+  - hardcore_tech
+  - tech_writer
+relevance_tags:
+  - thought-leadership
+  - architecture
+  - technical
+  - opinion
+  - network
+pre_filter:
+  min_engagement: 1
+  recency_window_days: 30
+  dedup_key: title_url
+priority: 5
+fragility_tier: stable
+staleness_threshold_days: 21

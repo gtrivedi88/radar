@@ -26,6 +26,7 @@
       "cron": "11 15 * * 4",
       "prompt": "Course opportunity validator: Analyze signals for multi-signal course opportunities hitting Gaurav's beat (AI tools + technical writing + workflows). TRIGGER ONLY if: community pain point (>50 mentions) + skill gap (no existing quality content) + economic signal (job demand) + 6-month runway. Output specific course outline + pricing + launch timeline if threshold met.",
       "createdAt": 1781160434408,
+      "lastFiredAt": 1781178230841,
       "recurring": true,
       "createdBySessionId": "716ae0cc-b213-4d40-a62f-5c117db9aefa",
       "createdByPid": 336535,

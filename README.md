@@ -1,109 +1,179 @@
-# Radar — Personal Intelligence System
+# Radar — Autonomous Intelligence System
 
-**Radar** is an autonomous intelligence system that synthesizes signals across AI, dev tools, technical writing, and creator economy to produce bi-weekly action-oriented intelligence digests.
+**Radar** is Gaurav's personal autonomous intelligence system that monitors signals across AI tools, technical writing, and developer workflows to identify opportunities for content, courses, and strategic positioning.
 
 ## Philosophy
 
-**Python does dumb deterministic fetching, Claude does all the judgment and synthesis.**
+**Python does deterministic fetching, Claude provides autonomous intelligence.**
 
-- Python scripts fetch data from APIs and store as JSON files
-- ALL intelligence happens in Claude via the `/radar` synthesis command  
-- No complex prediction algorithms in Python - just simple data collection
-- Memory and state management through simple markdown files
+- Radar-engine fetches data and runs autonomous analysis
+- ALL intelligence synthesis happens through Claude Code integration
+- Autonomous loops monitor thresholds and trigger actions
+- State and memory persist across intelligence cycles
 
 ## Quick Start
 
-1. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Installation
 
-2. **Configure sources**:
-   ```bash
-   cp sources/hn-algolia.yaml.example sources/hn-algolia.yaml
-   # Edit with your preferences
-   ```
+```bash
+# Install dependencies
+pip install -r requirements.lock
 
-3. **Fetch intelligence data**:
-   ```bash
-   python scripts/fetch_sources.py
-   ```
+# Or use development setup
+make install-dev
+```
 
-4. **Generate digest**:
-   ```bash
-   # In Claude Code:
-   /radar
-   ```
+### Basic Usage
+
+```bash
+# Run single intelligence cycle
+python -m radar-engine run
+
+# Set up autonomous monitoring loops  
+python -m radar-engine setup-loops
+
+# Run continuous autonomous intelligence
+python -m radar-engine continuous
+```
+
+### Integration with Claude Code
+
+The system integrates with Claude Code for synthesis:
+
+```bash
+# In Claude Code, trigger synthesis
+/radar
+
+# Or use autonomous synthesis (triggered automatically by thresholds)
+```
+
+## Features
+
+### 🎯 **Autonomous Intelligence**
+- Real-time threshold monitoring via SessionStart hooks
+- Scheduled intelligence loops (2d, 1w intervals)
+- Multi-signal course opportunity detection
+- Strategic hook system for contrarian positioning
+
+### 📊 **Intelligence Sources**
+- Hacker News (high-engagement content)
+- Anthropic Blog (capability updates)
+- Extensible YAML-based source configuration
+
+### 🧠 **Memory & State**
+- Cross-run memory via markdown state files
+- Intelligence signal tracking (`state/signals.jsonl`)
+- Autonomous loop state (`state/autonomous-loops.json`)
+- Threshold alert history (`state/threshold_alerts.jsonl`)
+
+### 🚀 **Course Opportunity Validator**
+- Multi-signal analysis (pain points + skill gaps + economic demand)
+- Automatic course outline + pricing + timeline generation
+- Beat-specific focus: AI tools + technical writing + workflows
+- Triggers when all thresholds met (>50 pain mentions, clear skill gap, economic demand, 6-month runway)
 
 ## Architecture
 
 ```
-Sources (YAML configs) → Python Fetchers → Raw JSON → `/radar` → Digest
-                                                         ↑
-                                                    State Files
+Sources (YAML configs) → Radar Engine → Autonomous Analysis → Claude Synthesis
+                             ↓
+                        State Persistence
 ```
 
-This keeps complexity in Claude (reasoning) not Python (plumbing).
+### Key Components
 
-## Core Components
+- **`radar-engine/`** - Autonomous intelligence orchestration
+- **`sources/`** - YAML source configurations  
+- **`state/`** - Memory and state persistence
+- **`.claude/hooks/`** - Real-time threshold monitoring
+- **Tests** - Comprehensive test coverage for autonomous components
 
-### Sources
-- **Configuration**: YAML files in `sources/` directory
-- **Types**: JSON APIs, RSS feeds, web scraping
-- **Extensible**: Drop a new YAML file, no code changes needed
+## Development
 
-### State Management
-- **`state/profile.md`**: Who you are, your beat, audiences, current focus
-- **`state/catalog.md`**: Published work (prevents duplicate suggestions)
-- **`state/trajectory.md`**: Current learning, queued items, completed work
-- **`state/feedback.md`**: Feedback on past digest items (Doing/Pass/Done/Watch)
-- **`state/signals.jsonl`**: Signal observations for trend computation
+```bash
+# Run tests
+make test
 
-### Autonomous Intelligence
-- **Strategic Hooks**: Claude Code hooks that monitor for threshold-triggered opportunities
-- **Autonomous Loops**: CronCreate jobs that run analysis on schedule
-- **Threshold Detection**: Automatically alerts when signals reach strategic importance
+# Update dependencies  
+make update-deps
 
-## Documentation
+# Test autonomous cycle
+make test-autonomous
+```
 
-- [Setup Guide](docs/setup.md) - Complete installation and configuration
-- [Adding Sources](docs/adding-sources.md) - How to configure new intelligence sources
-- [Autonomous Features](docs/autonomous-features.md) - Strategic hooks and loops
-- [State Management](docs/state-management.md) - Understanding the memory system
-- [Customization](docs/customization.md) - Adapting Radar to your beat and voice
+## State Files
 
-## Features
+- **`state/profile.md`** - User identity and beat definition
+- **`state/catalog.md`** - Published work (prevents topic duplication)
+- **`state/trajectory.md`** - Learning queue and active projects
+- **`state/feedback.md`** - Item feedback from past digests
+- **`state/signals.jsonl`** - Intelligence signal observations
+- **`state/autonomous-loops.json`** - Scheduled intelligence loops
+- **`state/threshold_alerts.jsonl`** - Hook trigger history
 
-### ✅ **Current (v1)**
-- Multi-source data fetching (HN, RSS, APIs)
-- Memory-aware synthesis via Claude
-- State persistence across runs
-- Strategic threshold monitoring
-- Autonomous loop scheduling
+## Autonomous Monitoring
 
-### 🚧 **Planned (v2)**
-- More source types (GitHub, Twitter, Discord)
-- Advanced prediction accuracy tracking
-- Multi-model synthesis comparison
-- Enhanced autonomous research triggers
+Radar continuously monitors for:
 
-## Beat Territory
+### High-Engagement Signals
+- HN posts >1000 points
+- Framework performance discussions >500 points  
+- AI + technical writing convergence signals
 
-Radar is designed for technical creators focused on:
-- AI tooling for technical writers
-- Claude Code workflows  
-- Developer experience
-- Technical writing career evolution
-- AI integration patterns for non-coders
+### Course Opportunities
+- Community pain points (>50 mentions)
+- Skill gaps (no quality content)
+- Economic demand (job postings, salary data)
+- 6-month runway confidence
 
-## License
+### Strategic Positioning
+- Contrarian angles on trending topics
+- Early capability signals from AI companies
+- Technical writing + AI tool intersection opportunities
 
-MIT License - See [LICENSE](LICENSE) for details.
+## Intelligence Flow
 
-## Contributing
+1. **Fetch** - Parallel source collection (`ParallelFetchOrchestrator`)
+2. **Analyze** - Multi-signal processing through autonomous hooks
+3. **Trigger** - Threshold-based action recommendations  
+4. **Synthesize** - Claude Code integration for intelligence digests
+5. **Persist** - State and memory updates for next cycle
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding sources, improving synthesis, and extending autonomous capabilities.
+## Configuration
+
+### Adding Sources
+
+Create YAML files in `sources/`:
+
+```yaml
+id: new-source
+name: "New Intelligence Source"
+type: json_api  # or rss
+enabled: true
+
+config:
+  endpoint: "https://api.example.com/data"
+  query_params:
+    limit: 20
+
+signal_type: ["trend", "news"]
+audience_tags: ["devs_curious_ai"]
+```
+
+### Autonomous Loops
+
+Configure in `state/autonomous-loops.json` or via:
+
+```bash
+python -m radar-engine setup-loops
+```
+
+## Integration
+
+- **Claude Code** - `/radar` synthesis command and autonomous triggers
+- **OpenClaw** - Future cloud deployment (containerized)
+- **CI/CD** - Automated testing and quality gates (GitHub Actions ready)
 
 ---
 
-**Built with**: Python for fetching, Claude for intelligence, markdown for state.
+**Radar transforms raw intelligence into actionable strategic insight through autonomous monitoring and Claude synthesis.**

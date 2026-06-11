@@ -37,9 +37,20 @@ The `/radar` command reads and updates these state files to maintain memory acro
 **Archive:**
 - `state/archive/radar-YYYY-MM-DD.md`: Past digests for reference
 
-## The `/radar` Command
+## Execution Methods
 
-This is the main synthesis command that produces the bi-weekly digest. It follows a Map-Route-Reduce pattern:
+### Primary: Radar Engine (Recommended)
+```bash
+python -m radar-engine run
+```
+This is the main autonomous intelligence system that:
+- Fetches from all sources via `ParallelFetchOrchestrator`
+- Processes intelligence through autonomous hooks
+- Triggers synthesis when thresholds are met
+- Maintains state across runs
+
+### Legacy: `/radar` Claude Code Command
+The `/radar` synthesis command produces bi-weekly digests following a Map-Route-Reduce pattern:
 
 **Step 1 - Load State**: Read all state files for context
 **Step 2 - Map**: Process source groups in parallel using subagents  
@@ -47,10 +58,12 @@ This is the main synthesis command that produces the bi-weekly digest. It follow
 **Step 4 - Stitch**: Combine into final digest and update state
 
 **Key Principles:**
-- Python fetches and stores data as JSON files in `raw/YYYY-MM-DD/`
-- Claude does ALL analysis and synthesis via the `/radar` command
+- Radar-engine fetches and stores data as JSON files in `raw/YYYY-MM-DD/`
+- Claude does ALL analysis and synthesis via the `/radar` command or autonomous triggers
 - Memory carries forward via state files
 - Output is actionable: specific things to write, learn, or pursue
+
+**Note:** Use `python -m radar-engine run` for all intelligence operations.
 
 ## Source Integration
 

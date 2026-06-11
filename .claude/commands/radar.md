@@ -91,4 +91,4 @@ Data sources (in priority order):
 2. `raw/YYYY-MM-DD/*.json` — fetched source data (if exists)
 
 **Available sources**: Check `sources/` directory for configured sources.
-**To fetch data**: Use `/fetch` skill or run `python scripts/fetch_sources.py`
+**To fetch data**: Run `python -m radar-engine run` or use autonomous monitoring

@@ -5,7 +5,7 @@ description: Add a new source to the modular YAML configuration system
 
 # Add Source
 
-Add a new data source to the Radar system by creating a YAML configuration.
+Add a new data source to the Radar autonomous intelligence system by creating a YAML configuration.
 
 ## Source Types Supported
 
@@ -77,6 +77,28 @@ config:
 
 ```bash
 # Add source YAML file
-# Then test fetch
-python scripts/fetch_sources.py
+# Then test autonomous fetch
+python -m radar-engine run
+
+# Test specific source
+python -m radar-engine fetch --source-id your-source-id
+
+# Debug source configuration
+python -m radar-engine validate-sources
 ```
+
+## Integration
+
+New sources automatically integrate with:
+- **Autonomous thresholds** - High-engagement detection
+- **Course opportunity validator** - Multi-signal analysis  
+- **Strategic hooks** - Real-time positioning alerts
+- **Claude synthesis** - Intelligence digest integration
+
+## Next Steps
+
+After adding a source:
+1. Test fetch with single autonomous cycle
+2. Review threshold alerts for signal quality
+3. Monitor course opportunity detection
+4. Integrate into regular autonomous loops

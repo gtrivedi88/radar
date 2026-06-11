@@ -11,6 +11,16 @@ state/watermarks.json
 # Working files
 inbox.md
 
+# Internal planning and implementation details
+docs/plans/
+docs/specs/
+docs/superpowers/
+.claude/plans/
+
+# Autonomous loop logs and temporary state
+state/threshold_alerts.jsonl
+state/hook_errors.jsonl
+
 # Upstream reference clone (kept untracked; cherry-pick as needed)
 
 

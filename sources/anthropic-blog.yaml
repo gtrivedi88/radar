@@ -1,0 +1,25 @@
+id: anthropic-blog
+name: "Anthropic Blog RSS"
+description: "Official Anthropic company blog"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.anthropic.com/news/rss.xml"
+  method: "GET"
+
+# Signal classification
+signal_type: ["capability", "news"]
+audience_tags: ["tech_writer", "devs_curious_ai", "hardcore_tech"]
+relevance_tags: ["claude", "ai", "llm", "anthropic"]
+
+# Pre-filtering
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 336  # 14 days
+  dedup_key: "url"
+
+# Metadata
+priority: 1
+poll_cadence: "daily"
+auth_required: false

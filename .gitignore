@@ -7,7 +7,6 @@ state/fetch-errors.jsonl
 state/watermarks.json
 
 # Claude Code session data
-.claude/
 
 # Working files
 inbox.md

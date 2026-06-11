@@ -1,25 +1,30 @@
 id: hn-algolia
-name: Hacker News (Algolia, front page)
+name: "Hacker News Algolia API"
+description: "Front page stories from Hacker News"
 type: json_api
+enabled: true
+
 config:
-  endpoint: https://hn.algolia.com/api/v1/search
+  endpoint: "https://hn.algolia.com/api/v1/search"
+  method: "GET"
   query_params:
-    tags: front_page
-    hitsPerPage: 50
-poll_cadence: daily
-signal_type:
-  - news
-  - capability
-audience_tags:
-  - hardcore_tech
-  - devs_curious_ai
-relevance_tags:
-  - hn
-  - hacker_news
+    tags: "front_page"
+    hitsPerPage: 20
+  headers:
+    User-Agent: "Radar/1.0"
+
+# Signal classification
+signal_type: ["news", "trend"]
+audience_tags: ["devs_curious_ai", "hardcore_tech"]
+relevance_tags: ["technology", "startups", "programming"]
+
+# Pre-filtering
 pre_filter:
-  min_engagement: 20
-  recency_window_days: 14
-  dedup_key: title_url
-priority: 1
-fragility_tier: stable
-staleness_threshold_days: 14
+  min_engagement: 10  # minimum points/score
+  recency_window_hours: 48
+  dedup_key: "url"
+
+# Metadata
+priority: 1  # 1=highest, 5=lowest
+poll_cadence: "daily"
+auth_required: false

@@ -1,0 +1,33 @@
+id: hn-hiring
+name: "HN Who's Hiring"
+description: "Monthly hiring threads — job market signals and skill demand"
+type: json_api
+enabled: true
+
+config:
+  endpoint: "https://hn.algolia.com/api/v1/search_by_date"
+  method: "GET"
+  query_params:
+    query: "who is hiring"
+    tags: "story"
+    hitsPerPage: 10
+  headers:
+    User-Agent: "Radar/1.0"
+  results_key: "hits"
+  field_map:
+    title: ["title", "story_title"]
+    url: ["url", "story_url"]
+    score: ["points"]
+    comments: ["num_comments"]
+    timestamp: ["created_at"]
+    content: []
+
+signal_type: ["market_signal"]
+audience_tags: ["devs_curious_ai", "tech_writer"]
+
+pre_filter:
+  min_engagement: 5
+  recency_window_hours: 720
+  dedup_key: "url"
+
+priority: 2

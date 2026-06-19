@@ -1,32 +1,11 @@
 {
   "tasks": [
     {
-      "id": "04efd036",
-      "cron": "47 */6 * * *",
-      "prompt": "Use Gaurav intelligence analysis on latest signals. Check for HTML-first development trend strengthening (>1000 total engagement), Claude performance pain points amplifying (>3 complaints), or new contrarian technical signals. If any threshold met, provide specific action recommendation with timeline.",
-      "createdAt": 1781160391502,
-      "lastFiredAt": 1781163058847,
-      "recurring": true,
-      "createdBySessionId": "716ae0cc-b213-4d40-a62f-5c117db9aefa",
-      "createdByPid": 336535,
-      "createdByProcStart": "5425716"
-    },
-    {
       "id": "2c2c6034",
       "cron": "23 9 * * 1",
       "prompt": "Weekly contrarian signal hunt: Analyze past week's intelligence for signals that contradict mainstream developer consensus. Look for: performance data opposing popular frameworks, tooling adoption contradicting hype, workflow evidence contradicting best practices. Apply Gaurav intelligence analysis - provide specific post recommendations with \"Ship by Friday\" urgency if contrarian angle + strong evidence detected.",
       "createdAt": 1781160410248,
-      "recurring": true,
-      "createdBySessionId": "716ae0cc-b213-4d40-a62f-5c117db9aefa",
-      "createdByPid": 336535,
-      "createdByProcStart": "5425716"
-    },
-    {
-      "id": "deb28136",
-      "cron": "11 15 * * 4",
-      "prompt": "Course opportunity validator: Analyze signals for multi-signal course opportunities hitting Gaurav's beat (AI tools + technical writing + workflows). TRIGGER ONLY if: community pain point (>50 mentions) + skill gap (no existing quality content) + economic signal (job demand) + 6-month runway. Output specific course outline + pricing + launch timeline if threshold met.",
-      "createdAt": 1781160434408,
-      "lastFiredAt": 1781178230841,
+      "lastFiredAt": 1781625510830,
       "recurring": true,
       "createdBySessionId": "716ae0cc-b213-4d40-a62f-5c117db9aefa",
       "createdByPid": 336535,

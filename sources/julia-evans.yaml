@@ -1,0 +1,21 @@
+id: julia-evans
+name: "Julia Evans"
+description: "Elite developer craft — systems, debugging, and fundamentals"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://jvns.ca/atom.xml"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["capability", "trend"]
+audience_tags: ["hardcore_tech"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 2

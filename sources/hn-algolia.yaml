@@ -12,6 +12,7 @@ config:
     hitsPerPage: 20
   headers:
     User-Agent: "Radar/1.0"
+  results_key: "hits"
 
 # Signal classification
 signal_type: ["news", "trend"]

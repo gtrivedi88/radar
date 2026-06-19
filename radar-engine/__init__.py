@@ -1,9 +1,4 @@
-"""
-Radar Engine - Autonomous Intelligence Orchestration
+"""Radar Engine — dumb fetcher for intelligence sources"""
 
-Our own engine for elite intelligence processing, inspired by horizon-base
-but redesigned for strategic positioning and autonomous loops.
-"""
-
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __author__ = "Gaurav Trivedi"

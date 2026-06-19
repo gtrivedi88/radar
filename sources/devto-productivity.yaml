@@ -1,0 +1,31 @@
+id: devto-productivity
+name: "Dev.to Productivity"
+type: json_api
+enabled: true
+
+config:
+  endpoint: "https://dev.to/api/articles"
+  method: "GET"
+  query_params:
+    tag: "productivity"
+    top: 7
+    per_page: 20
+  headers:
+    User-Agent: "Radar/1.0"
+  field_map:
+    title: ["title"]
+    url: ["url"]
+    score: ["positive_reactions_count", "public_reactions_count"]
+    comments: ["comments_count"]
+    timestamp: ["published_timestamp", "published_at"]
+    content: ["description"]
+
+signal_type: ["trend"]
+audience_tags: ["devs_curious_ai", "tech_writer"]
+
+pre_filter:
+  min_engagement: 3
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

@@ -1,104 +1,51 @@
 ---
 name: add-source
-description: Add a new source to the modular YAML configuration system
+description: Add a new intelligence source
 ---
 
-# Add Source
+# Add a Source
 
-Add a new data source to the Radar autonomous intelligence system by creating a YAML configuration.
+Drop a YAML file in `sources/`. No code changes needed.
 
-## Source Types Supported
-
-1. **json_api** - REST APIs that return JSON
-2. **rss** - RSS/Atom feeds  
-3. **github_watch** - GitHub repository monitoring (future)
-4. **scrape** - Web scraping (future)
-
-## YAML Template
-
-Create a new file in `sources/<source-id>.yaml`:
+## Template
 
 ```yaml
-id: unique-source-id
-name: "Human Readable Name"
-description: "What this source provides"
-type: json_api|rss|github_watch|scrape
+id: new-source
+name: "Source Name"
+type: json_api    # or rss
 enabled: true
 
 config:
-  endpoint: "https://api.example.com/endpoint"
-  method: "GET"  # Usually GET
+  endpoint: "https://api.example.com/articles"
+  method: "GET"
   query_params:
-    key: value
+    limit: 20
   headers:
     User-Agent: "Radar/1.0"
-  auth_env: "API_KEY_ENV_VAR"  # Optional
+  results_key: "items"         # optional: key containing array
+  field_map:                   # optional: map fields
+    title: ["title"]
+    url: ["url", "link"]
+    score: ["points", "score", "reactions_count"]
+    comments: ["comments_count", "num_comments"]
+    timestamp: ["created_at", "published_at"]
+    content: ["description", "summary"]
 
-# Signal classification
-signal_type: ["news", "capability", "trend", "investor"]
-audience_tags: ["tech_writer", "devs_curious_ai", "hardcore_tech"]
-relevance_tags: ["ai", "programming", "documentation"]
+signal_type: ["trend", "news"]
+audience_tags: ["devs_curious_ai"]
 
-# Pre-filtering
 pre_filter:
   min_engagement: 5
-  recency_window_hours: 72
+  recency_window_hours: 168
   dedup_key: "url"
 
-# Metadata
-priority: 1  # 1=highest, 5=lowest
-poll_cadence: "daily"
-auth_required: false
+priority: 2
 ```
 
-## Examples
-
-**Reddit Subreddit:**
-```yaml
-id: r-programming
-name: "r/programming"
-type: json_api
-config:
-  endpoint: "https://www.reddit.com/r/programming/hot.json"
-  query_params:
-    limit: 25
-```
-
-**Company Blog:**
-```yaml
-id: openai-blog
-name: "OpenAI Blog"
-type: rss
-config:
-  endpoint: "https://openai.com/blog/rss.xml"
-```
-
-## Test New Source
+## Test
 
 ```bash
-# Add source YAML file
-# Then test autonomous fetch
 python -m radar-engine run
-
-# Test specific source
-python -m radar-engine fetch --source-id your-source-id
-
-# Debug source configuration
-python -m radar-engine validate-sources
 ```
 
-## Integration
-
-New sources automatically integrate with:
-- **Autonomous thresholds** - High-engagement detection
-- **Course opportunity validator** - Multi-signal analysis  
-- **Strategic hooks** - Real-time positioning alerts
-- **Claude synthesis** - Intelligence digest integration
-
-## Next Steps
-
-After adding a source:
-1. Test fetch with single autonomous cycle
-2. Review threshold alerts for signal quality
-3. Monitor course opportunity detection
-4. Integrate into regular autonomous loops
+Verify the source appears in output and raw JSON is saved.

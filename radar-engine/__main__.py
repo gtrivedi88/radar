@@ -1,8 +1,4 @@
-"""
-Radar Engine - Command Line Interface
-
-Entry point for running autonomous intelligence operations
-"""
+"""Radar Engine CLI entry point"""
 
 import asyncio
 from .main import main

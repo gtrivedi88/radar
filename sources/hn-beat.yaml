@@ -1,0 +1,36 @@
+id: hn-beat
+name: "HN Beat-Specific Search"
+description: "Hacker News posts matching Gaurav's beat — AI tools, Claude, MCP, technical writing"
+type: json_api
+enabled: true
+
+config:
+  endpoint: "https://hn.algolia.com/api/v1/search_by_date"
+  method: "GET"
+  query_params:
+    query: "anthropic"
+    tags: "story"
+    hitsPerPage: 20
+  headers:
+    User-Agent: "Radar/1.0"
+  results_key: "hits"
+  field_map:
+    title: ["title", "story_title"]
+    url: ["url", "story_url"]
+    score: ["points"]
+    comments: ["num_comments"]
+    timestamp: ["created_at"]
+    content: []
+
+signal_type: ["trend", "capability", "pain_point"]
+audience_tags: ["devs_curious_ai", "tech_writer", "hardcore_tech"]
+relevance_tags: ["claude", "anthropic", "mcp", "technical-writing", "developer-tools"]
+
+pre_filter:
+  min_engagement: 3
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 1
+poll_cadence: "daily"
+auth_required: false

@@ -1,0 +1,21 @@
+id: lennys-newsletter
+name: "Lenny's Newsletter"
+description: "Product management, growth, and AI agent design patterns"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.lennysnewsletter.com/feed"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["trend", "capability"]
+audience_tags: ["devs_curious_ai", "tech_writer"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 2

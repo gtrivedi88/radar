@@ -1,0 +1,35 @@
+id: devto-ai
+name: "Dev.to AI Tag"
+description: "AI-tagged articles from Dev.to developer community"
+type: json_api
+enabled: true
+
+config:
+  endpoint: "https://dev.to/api/articles"
+  method: "GET"
+  query_params:
+    tag: "ai"
+    top: 7
+    per_page: 20
+  headers:
+    User-Agent: "Radar/1.0"
+  field_map:
+    title: ["title"]
+    url: ["url"]
+    score: ["positive_reactions_count", "public_reactions_count"]
+    comments: ["comments_count"]
+    timestamp: ["published_timestamp", "published_at"]
+    content: ["description"]
+
+signal_type: ["trend", "capability"]
+audience_tags: ["devs_curious_ai", "hardcore_tech"]
+relevance_tags: ["ai", "llm", "machine-learning", "claude", "gpt", "developer-tools"]
+
+pre_filter:
+  min_engagement: 5
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 2
+poll_cadence: "daily"
+auth_required: false

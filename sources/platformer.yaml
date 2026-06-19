@@ -1,0 +1,21 @@
+id: platformer
+name: "Platformer"
+description: "Tech policy, platform governance, and AI regulation"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.platformer.news/rss/"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["news", "trend"]
+audience_tags: ["devs_curious_ai"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

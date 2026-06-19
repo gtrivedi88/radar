@@ -1,0 +1,20 @@
+id: arstechnica
+name: "Ars Technica Technology Lab"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://feeds.arstechnica.com/arstechnica/technology-lab"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["news", "trend"]
+audience_tags: ["hardcore_tech"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

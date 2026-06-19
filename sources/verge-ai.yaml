@@ -1,0 +1,20 @@
+id: verge-ai
+name: "The Verge AI"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["news", "capability"]
+audience_tags: ["devs_curious_ai", "tech_writer"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

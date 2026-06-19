@@ -1,0 +1,21 @@
+id: infoworld
+name: "InfoWorld"
+description: "Enterprise developer technology analysis — AI coding, tools, practices"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.infoworld.com/feed/"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["trend", "news"]
+audience_tags: ["devs_curious_ai", "hardcore_tech"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

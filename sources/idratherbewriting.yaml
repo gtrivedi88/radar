@@ -1,0 +1,21 @@
+id: idratherbewriting
+name: "I'd Rather Be Writing (Tom Johnson)"
+description: "Premier technical writing blog — AI impact on documentation profession"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://idratherbewriting.com/feed.xml"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["trend", "news"]
+audience_tags: ["tech_writer"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 1

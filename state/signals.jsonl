@@ -1,6 +1,15 @@
-{"date": "2026-05-28", "theme": "hacker_news_ingestion", "source_count": 1, "engagement_total": 981}
-{"date": "2026-06-11", "theme": "claude_4_7_capabilities", "source_count": 1, "engagement_total": 1}
-{"date": "2026-06-11", "theme": "mcp_ecosystem_maturation", "source_count": 1, "engagement_total": 1}
-{"date": "2026-06-11", "theme": "html_first_development", "source_count": 1, "engagement_total": 1545}
-{"date": "2026-06-11", "theme": "claude_performance_scrutiny", "source_count": 1, "engagement_total": 664}
-{"date": "2026-06-11", "prediction_id": "html_first_contrarian_post_opportunity", "theme": "HTML-first beats React content opportunity", "confidence": 0.85, "timeline": "Ship by 2026-06-14", "evidence_levels": ["behavioral"], "action_type": "immediate_content", "competition_analysis": "zero_quality_contrarian_takes", "audience_readiness": 1065}
+{"date": "2026-05-28", "theme": "hacker_news_ingestion", "source_count": 1, "engagement_total": 981, "signal_type": "early_signal", "cross_source": false}
+{"date": "2026-06-11", "theme": "html_first_development", "source_count": 1, "engagement_total": 1545, "signal_type": "capability_shift", "cross_source": false}
+{"date": "2026-06-11", "theme": "claude_performance_scrutiny", "source_count": 1, "engagement_total": 664, "signal_type": "production_reality", "cross_source": false}
+{"date": "2026-06-11", "theme": "mcp_ecosystem_maturation", "source_count": 1, "engagement_total": 1, "signal_type": "capability_shift", "cross_source": false}
+{"date": "2026-06-18", "theme": "claude_performance_complaints_amplifying", "source_count": 3, "engagement_total": 1333, "signal_type": "production_reality", "cross_source": true}
+{"date": "2026-06-18", "theme": "anthropic_fable_guardrail_criticism", "source_count": 2, "engagement_total": 828, "signal_type": "geopolitical_risk", "cross_source": false}
+{"date": "2026-06-18", "theme": "ai_agent_control_concerns", "source_count": 1, "engagement_total": 383, "signal_type": "early_signal", "cross_source": false}
+{"date": "2026-06-19", "theme": "anthropic_fable_governance_crisis", "source_count": 6, "engagement_total": 982, "signal_type": "geopolitical_risk", "cross_source": true}
+{"date": "2026-06-19", "theme": "ai_agent_engineering_mainstream", "source_count": 5, "engagement_total": 340, "signal_type": "capability_shift", "cross_source": true}
+{"date": "2026-06-19", "theme": "ai_cost_reliability_pain", "source_count": 3, "engagement_total": 245, "signal_type": "production_reality", "cross_source": true}
+{"date": "2026-06-19", "theme": "ai_content_quality_debate", "source_count": 3, "engagement_total": 310, "signal_type": "tech_writer_relevance", "cross_source": true}
+{"date": "2026-06-19", "theme": "github_supply_chain_security", "source_count": 3, "engagement_total": 779, "signal_type": "security_awareness", "cross_source": true}
+{"date": "2026-06-19", "theme": "copilot_cli_maturation", "source_count": 1, "engagement_total": 0, "signal_type": "capability_shift", "cross_source": false}
+{"date": "2026-06-19", "theme": "html_first_momentum_fading", "source_count": 0, "engagement_total": 0, "signal_type": "counter_signal", "cross_source": false}
+{"date": "2026-06-19", "theme": "ai_job_market_signals", "source_count": 1, "engagement_total": 1365, "signal_type": "market_signal", "cross_source": false}

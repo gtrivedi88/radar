@@ -1,0 +1,31 @@
+id: hn-show
+name: "Hacker News Show HN"
+type: json_api
+enabled: true
+
+config:
+  endpoint: "https://hn.algolia.com/api/v1/search_by_date"
+  method: "GET"
+  query_params:
+    tags: "show_hn"
+    hitsPerPage: 20
+  headers:
+    User-Agent: "Radar/1.0"
+  results_key: "hits"
+  field_map:
+    title: ["title", "story_title"]
+    url: ["url", "story_url"]
+    score: ["points"]
+    comments: ["num_comments"]
+    timestamp: ["created_at"]
+    content: []
+
+signal_type: ["capability", "trend"]
+audience_tags: ["devs_curious_ai", "hardcore_tech"]
+
+pre_filter:
+  min_engagement: 5
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 2

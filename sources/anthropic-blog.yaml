@@ -2,7 +2,7 @@ id: anthropic-blog
 name: "Anthropic Blog RSS"
 description: "Official Anthropic company blog"
 type: rss
-enabled: true
+enabled: false  # RSS endpoint https://www.anthropic.com/news/rss.xml returns 404 - Anthropic removed RSS feeds
 
 config:
   endpoint: "https://www.anthropic.com/news/rss.xml"

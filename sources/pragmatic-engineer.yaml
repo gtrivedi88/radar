@@ -1,0 +1,21 @@
+id: pragmatic-engineer
+name: "The Pragmatic Engineer"
+description: "Engineering leadership, hiring trends, and AI impact on software industry"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://newsletter.pragmaticengineer.com/feed"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["trend", "market_signal"]
+audience_tags: ["devs_curious_ai", "hardcore_tech"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 1

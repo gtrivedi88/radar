@@ -1,0 +1,21 @@
+id: oneusefulthing
+name: "One Useful Thing (Ethan Mollick)"
+description: "Leading AI practitioner and researcher on AI in work and education"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://www.oneusefulthing.org/feed"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["capability", "trend"]
+audience_tags: ["devs_curious_ai", "tech_writer"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 1

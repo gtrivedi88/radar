@@ -1,0 +1,20 @@
+id: techcrunch
+name: "TechCrunch"
+type: rss
+enabled: true
+
+config:
+  endpoint: "https://techcrunch.com/feed/"
+  method: "GET"
+  headers:
+    User-Agent: "Radar/1.0"
+
+signal_type: ["news", "trend"]
+audience_tags: ["devs_curious_ai"]
+
+pre_filter:
+  min_engagement: 0
+  recency_window_hours: 168
+  dedup_key: "url"
+
+priority: 3

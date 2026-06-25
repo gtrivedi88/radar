@@ -41,3 +41,40 @@ def test_resolve_subcommand_banks_logs_and_clears(tmp_path):
 
     assert (state / "theme-resolutions.jsonl").read_text() == ""  # consumed, won't re-apply
     assert "ai_cost_pain" in (state / "theme-resolution-log.jsonl").read_text()
+
+
+def test_eval_tolerates_malformed_predictions(tmp_path):
+    """Verify cmd_eval skips malformed predictions (missing/extra keys) and produces scorecard."""
+    state = tmp_path / "state"
+    state.mkdir()
+
+    # Minimal registry
+    (state / "theme-registry.jsonl").write_text(
+        json.dumps({"theme_id": "test_id", "canonical_name": "test",
+                    "aliases": [], "first_seen": "2026-06-01", "last_seen": "2026-06-01",
+                    "cycle_count": 1}) + "\n", encoding="utf-8")
+
+    # Valid prediction + malformed line (valid JSON but missing required keys)
+    (state / "act-now-predictions.jsonl").write_text(
+        json.dumps({"date": "2026-06-01", "theme_id": "test_id",
+                    "recommendation": "test", "status": "pending"}) + "\n" +
+        json.dumps({"oops": 1}) + "\n",  # malformed: missing required keys
+        encoding="utf-8")
+
+    # Minimal signal bank
+    (state / "signal-bank.jsonl").write_text(
+        json.dumps({"date": "2026-06-01", "theme_id": "test_id",
+                    "theme": "test", "source_count": 1, "sources": [],
+                    "engagement_total": 1, "status": "surfaced",
+                    "cycle_count": 1, "first_seen": "2026-06-01", "evidence": ""}) + "\n",
+        encoding="utf-8")
+
+    repo_root = Path(__file__).resolve().parents[1]
+    proc = subprocess.run(
+        [sys.executable, "-m", "radar_memory", "eval"],
+        cwd=tmp_path, capture_output=True, text=True,
+        env={**os.environ, "PYTHONPATH": str(repo_root), "RADAR_STATE_DIR": str(state)},
+    )
+    assert proc.returncode == 0, f"stderr: {proc.stderr}"
+    assert "ACT NOW track record:" in proc.stdout
+    assert "⚠️  Skipping malformed prediction" in proc.stdout

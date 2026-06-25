@@ -89,7 +89,12 @@ def cmd_resolve() -> None:
 
 
 def cmd_eval() -> None:
-    preds = [Prediction(**p) for p in _read_jsonl(STATE / "act-now-predictions.jsonl")]
+    preds = []
+    for p in _read_jsonl(STATE / "act-now-predictions.jsonl"):
+        try:
+            preds.append(Prediction(**p))
+        except TypeError as e:  # missing/extra key from a malformed prediction
+            print(f"⚠️  Skipping malformed prediction {p!r}: {e}")
     bank = _read_jsonl(STATE / "signal-bank.jsonl")
     catalog = (STATE / "catalog.md").read_text(encoding="utf-8") if (STATE / "catalog.md").exists() else ""
     feedback = (STATE / "feedback.md").read_text(encoding="utf-8") if (STATE / "feedback.md").exists() else ""
@@ -113,7 +118,7 @@ def cmd_contrarian() -> None:
         print("[]")
         return
     latest = max(e.get("date", "") for e in bank)
-    present = {e.get("theme_id") for e in bank if e.get("date") == latest}
+    present = {e.get("theme_id") for e in bank if e.get("date") == latest and e.get("theme_id")}
     flagged = expected_but_quiet(registry, present, bank)
     print(json.dumps(flagged, ensure_ascii=False, indent=2))
 

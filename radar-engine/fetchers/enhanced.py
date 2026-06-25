@@ -24,6 +24,9 @@ class EnhancedYAMLFetcher(BaseFetcher):
             config = yaml.safe_load(f)
         return cls(config, http_client)
 
+    def _max_items(self, default: int) -> int:
+        return int(self.config.get("max_items", default))
+
     async def fetch(self) -> List[IntelligenceItem]:
         if self.config['type'] == 'json_api':
             items = await self._fetch_json_api()
@@ -63,7 +66,7 @@ class EnhancedYAMLFetcher(BaseFetcher):
             content_fields = fm.get('content', ['description', 'description_plain', 'summary'])
 
             items = []
-            for item in raw_items[:20]:
+            for item in raw_items[: self._max_items(20)]:
                 items.append(IntelligenceItem(
                     title=self._extract_field(item, title_fields, 'Untitled'),
                     url=self._extract_field(item, url_fields, ''),
@@ -86,7 +89,7 @@ class EnhancedYAMLFetcher(BaseFetcher):
             response.raise_for_status()
             feed = feedparser.parse(response.text)
             items = []
-            for entry in feed.entries[:10]:
+            for entry in feed.entries[: self._max_items(10)]:
                 items.append(IntelligenceItem(
                     title=entry.get('title', 'Untitled'),
                     url=entry.get('link', ''),

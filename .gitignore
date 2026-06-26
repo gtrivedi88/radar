@@ -15,7 +15,7 @@ inbox.md
 docs/plans/
 docs/specs/
 docs/superpowers/
-.claude/plans/
+
 
 # Autonomous loop logs and temporary state
 state/threshold_alerts.jsonl

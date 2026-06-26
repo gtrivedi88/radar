@@ -15,3 +15,10 @@
 {"date": "2026-06-19", "theme": "ai_job_market_signals", "source_count": 1, "engagement_total": 1365, "signal_type": "market_signal", "cross_source": false}
 {"date": "2026-06-26", "theme": "context_bloat_backlash", "source_count": 3, "engagement_total": 62, "signal_type": "counter_signal", "cross_source": true}
 {"date": "2026-06-26", "theme": "cheaper_model_cost_inversion", "source_count": 4, "engagement_total": 59, "signal_type": "counter_signal", "cross_source": true}
+{"date": "2026-06-26", "theme": "agent_memory_spec_driven", "source_count": 4, "engagement_total": 103, "signal_type": "capability_shift", "cross_source": true}
+{"date": "2026-06-26", "theme": "agent_trust_authorization", "source_count": 6, "engagement_total": 145, "signal_type": "security_awareness", "cross_source": true}
+{"date": "2026-06-26", "theme": "ai_velocity_trap", "source_count": 5, "engagement_total": 95, "signal_type": "production_reality", "cross_source": true}
+{"date": "2026-06-26", "theme": "ai_cost_reliability_pain", "source_count": 7, "engagement_total": 70, "signal_type": "production_reality", "cross_source": true}
+{"date": "2026-06-26", "theme": "ai_job_market_restructuring", "source_count": 5, "engagement_total": 1050, "signal_type": "market_signal", "cross_source": true}
+{"date": "2026-06-26", "theme": "local_models_good_now", "source_count": 6, "engagement_total": 45, "signal_type": "capability_shift", "cross_source": true}
+{"date": "2026-06-26", "theme": "model_distillation_ip_war", "source_count": 3, "engagement_total": 85, "signal_type": "geopolitical_risk", "cross_source": true}

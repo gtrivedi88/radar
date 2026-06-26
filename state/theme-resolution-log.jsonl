@@ -1,0 +1,21 @@
+{"date": "2026-06-26", "surfaced_name": "agent_memory_spec_driven", "chosen_theme_id": "agent_memory_spec_driven", "method": "new", "rationale": "minted"}
+{"date": "2026-06-26", "surfaced_name": "agent_trust_authorization", "chosen_theme_id": "agent_trust_authorization", "method": "new", "rationale": "minted"}
+{"date": "2026-06-26", "surfaced_name": "ai_velocity_trap_consensus", "chosen_theme_id": "ai_velocity_trap", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "ai_cost_token_economics", "chosen_theme_id": "ai_cost_reliability_pain", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "ai_job_market_restructuring", "chosen_theme_id": "ai_job_market_restructuring", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "local_open_weights_models", "chosen_theme_id": "local_models_good_now", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "model_distillation_ip_war", "chosen_theme_id": "model_distillation_ip_war", "method": "new", "rationale": "minted"}
+{"date": "2026-06-26", "surfaced_name": "cheaper_model_cost_inversion", "chosen_theme_id": "cheaper_model_cost_inversion", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "context_engineering_claude_md", "chosen_theme_id": "context_bloat_backlash", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "technical_writing_craft", "chosen_theme_id": "technical_writing_craft", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "ai_content_quality_moderation", "chosen_theme_id": "ai_content_quality_moderation", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "evals_as_prd", "chosen_theme_id": "ai_agent_eval_patterns", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "parallel_agents_worktrees", "chosen_theme_id": "multi_tool_ai_workflows", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "ai_gateway_routing", "chosen_theme_id": "llm_pipeline_architecture", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "copilot_cli_maturation", "chosen_theme_id": "copilot_cli_maturation", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "ai_supply_chain_security", "chosen_theme_id": "ai_supply_chain_security", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "ai_regulation_governance", "chosen_theme_id": "sovereign_ai_debate", "method": "claude", "rationale": "matched via claude"}
+{"date": "2026-06-26", "surfaced_name": "ai_funding_infrastructure", "chosen_theme_id": "ai_funding_infrastructure", "method": "exact", "rationale": "matched via exact"}
+{"date": "2026-06-26", "surfaced_name": "claude_tag_teammate", "chosen_theme_id": "claude_tag_teammate", "method": "new", "rationale": "minted"}
+{"date": "2026-06-26", "surfaced_name": "stack_overflow_knowledge_decay", "chosen_theme_id": "stack_overflow_knowledge_decay", "method": "new", "rationale": "minted"}
+{"date": "2026-06-26", "surfaced_name": "anthropic_fable_governance_crisis", "chosen_theme_id": "anthropic_fable_governance_crisis", "method": "exact", "rationale": "matched via exact"}

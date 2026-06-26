@@ -26,7 +26,21 @@
       "Bash(.venv/bin/python -m pip install -q -r requirements.lock)",
       "Bash(.venv/bin/python -m pip install -q pytest)",
       "Bash(.venv/bin/python -m pytest tests/ -q)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(git remote *)",
+      "Bash(git rev-list *)",
+      "Bash(.venv/bin/python -m radar-engine run)",
+      "Bash(python3 -c \"import sys,json,glob; total=sum\\(len\\(json.load\\(open\\(f\\)\\)\\) for f in glob.glob\\('raw/2026-06-26/*.json'\\)\\); print\\(total,'items'\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('raw/2026-06-26/devto-ai.json'\\)\\); print\\(json.dumps\\(d[0], indent=2\\)[:800]\\)\")",
+      "Bash(python3)",
+      "Bash(.venv/bin/python -m radar_memory resolve)",
+      "Bash(.venv/bin/python -m radar_memory eval)",
+      "Bash(.venv/bin/python -m radar_memory lineage)",
+      "Bash(.venv/bin/python -m radar_memory contrarian)",
+      "Bash(python3 -c \"import sys,json; [print\\(' ',json.loads\\(l\\)['theme_id'],'cyc',json.loads\\(l\\)['cycle_count']\\) for l in sys.stdin]\")"
     ],
     "additionalDirectories": [
       "/home/gtrivedi/Documents/GitHub/radar"

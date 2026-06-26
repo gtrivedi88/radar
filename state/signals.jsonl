@@ -13,3 +13,5 @@
 {"date": "2026-06-19", "theme": "copilot_cli_maturation", "source_count": 1, "engagement_total": 0, "signal_type": "capability_shift", "cross_source": false}
 {"date": "2026-06-19", "theme": "html_first_momentum_fading", "source_count": 0, "engagement_total": 0, "signal_type": "counter_signal", "cross_source": false}
 {"date": "2026-06-19", "theme": "ai_job_market_signals", "source_count": 1, "engagement_total": 1365, "signal_type": "market_signal", "cross_source": false}
+{"date": "2026-06-26", "theme": "context_bloat_backlash", "source_count": 3, "engagement_total": 62, "signal_type": "counter_signal", "cross_source": true}
+{"date": "2026-06-26", "theme": "cheaper_model_cost_inversion", "source_count": 4, "engagement_total": 59, "signal_type": "counter_signal", "cross_source": true}

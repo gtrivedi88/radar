@@ -19,7 +19,14 @@
       "Skill(claude-api)",
       "Skill(claude-api:*)",
       "Bash(.venv/bin/python -m pytest tests/ *)",
-      "Bash(python3 -m pytest tests/ -q)"
+      "Bash(python3 -m pytest tests/ -q)",
+      "Bash(.claude/worktrees/radar-memory-layer/.venv/bin/python -m pytest tests/ -q)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(.venv/bin/python -m pip install -q --upgrade pip)",
+      "Bash(.venv/bin/python -m pip install -q -r requirements.lock)",
+      "Bash(.venv/bin/python -m pip install -q pytest)",
+      "Bash(.venv/bin/python -m pytest tests/ -q)",
+      "Bash(git check-ignore *)"
     ],
     "additionalDirectories": [
       "/home/gtrivedi/Documents/GitHub/radar"

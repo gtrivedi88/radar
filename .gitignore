@@ -20,6 +20,8 @@ docs/superpowers/
 # Autonomous loop logs and temporary state
 state/threshold_alerts.jsonl
 state/hook_errors.jsonl
+state/theme-resolutions.jsonl
+state/*.tmp
 
 # Upstream reference clone (kept untracked; cherry-pick as needed)
 

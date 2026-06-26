@@ -3,6 +3,7 @@ name: "Hacker News Algolia API"
 description: "Front page stories from Hacker News"
 type: json_api
 enabled: true
+max_items: 30
 
 config:
   endpoint: "https://hn.algolia.com/api/v1/search"

@@ -40,6 +40,7 @@ def save_registry(path: Path, registry: dict) -> None:
     # Atomic write: a kill mid-write must never corrupt the system of record.
     # with_name (not with_suffix) avoids any version-dependent suffix-parsing surprises.
     path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = path.with_name(path.name + ".tmp")
     with open(tmp_path, "w", encoding="utf-8") as f:
         for entry in registry.values():

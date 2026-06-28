@@ -75,14 +75,16 @@ python -m radar_memory resolve      # consume Claude's proposals → registry + 
 python -m radar_memory eval         # ACT NOW scorecard (outcome-first: shipped/acted, not just trend persistence)
 python -m radar_memory lineage      # engagement chain per theme: 664 (2026-06-11) → 1333 (2026-06-18)
 python -m radar_memory contrarian   # "expected but quiet": strong-prior themes with ZERO items this cycle
+python -m radar_memory catalog-sync # project blog _posts/ → catalog.md (radar_theme tag closes the eval loop)
 ```
 
 - **Resolver seam** (`resolver.py`): Claude proposes a `theme_id` or `NEW`; Python validates with a deterministic exact/alias backstop that overrides a wrong "NEW", then mints a fresh id if genuinely new. Identity is never left to fuzzy string reuse.
 - **Outcome-first eval** (`evalgrade.py`): a prediction counts as a win only when it ships (in `catalog.md`) or is acted on (in `feedback.md`). Trend persistence alone is a separate, weaker `sustained` label — momentum ≠ correctness.
 - **Grounded contrarian** (`contrarian.py`): the "dogs that didn't bark" are computed deterministically from the registry, never speculated.
+- **Catalog sync** (`catalog_sync.py`): regenerates `catalog.md`'s Blog Posts section from the blog repo's `_posts/` (path via `RADAR_BLOG_DIR`, default `../gautriv.github.io/_posts`). A post opts a theme in with `radar_theme: <theme_id>` in its front matter; that tag travels with the post and the eval matches the projected token — no hand-tagging `catalog.md`, no fuzzy title matching. Also populates the full publication history so synthesis can honor "never re-suggest a topic already covered."
 - **Migration**: `python -m radar_memory.migrate` bootstraps the registry and rekeys the bank to `theme_id` (already run once on 2026-06-26).
 
-Run `make test` (38 tests) after touching this package.
+Run `make test` (49 tests) after touching this package.
 
 ### Signals Log Schema (surfaced themes only)
 
@@ -118,8 +120,9 @@ radar/
 │   ├── lineage.py             # Engagement chain per theme
 │   ├── contrarian.py          # Grounded "expected but quiet"
 │   ├── evalgrade.py           # Outcome-first ACT NOW scorecard
+│   ├── catalog_sync.py        # Project blog _posts/ → catalog.md (closes eval loop)
 │   ├── migrate.py             # One-time bank → theme_id migration
-│   └── __main__.py            # CLI: resolve / eval / contrarian / lineage
+│   └── __main__.py            # CLI: resolve / eval / contrarian / lineage / catalog-sync
 ├── sources/                   # 30 YAML configs (drop file = add source)
 ├── state/                     # Memory
 │   ├── theme-registry.jsonl   # Canonical theme identity (system of record)
@@ -130,7 +133,7 @@ radar/
 │   ├── profile.md / catalog.md / trajectory.md / feedback.md
 │   └── archive/               # Past digests
 ├── raw/                       # Fetched JSON (gitignored)
-├── tests/                     # 38 tests (run with make test)
+├── tests/                     # 49 tests (run with make test)
 ├── .claude/
 │   ├── commands/radar.md      # /radar — the intelligence engine
 │   └── skills/                # Calibration skills
@@ -151,7 +154,7 @@ Beat: AI tooling for technical writers, Claude Code workflows, developer experie
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.lock pytest
-make test                            # 38 tests
+make test                            # 49 tests
 python -m radar-engine run           # Fetch from 30 sources
 /radar                               # Claude synthesizes
 ```

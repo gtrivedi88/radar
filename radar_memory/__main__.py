@@ -11,6 +11,7 @@ from .resolver import Proposal, resolve_theme
 from .lineage import theme_lineage
 from .contrarian import expected_but_quiet
 from .evalgrade import Prediction, grade_prediction, scorecard
+from .catalog_sync import collect_posts, sync_catalog
 
 # Anchored to the repo, overridable for tests (see migrate.py for the rationale).
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -139,15 +140,33 @@ def cmd_lineage() -> None:
         print(f"{tid}: {chain}")
 
 
+def cmd_catalog_sync() -> None:
+    blog_dir = Path(os.environ.get(
+        "RADAR_BLOG_DIR", ROOT_DIR.parent / "gautriv.github.io" / "_posts")).resolve()
+    if not blog_dir.exists():
+        print(f"⚠️  Blog dir not found: {blog_dir} (set RADAR_BLOG_DIR)")
+        return
+    catalog_path = STATE / "catalog.md"
+    posts = collect_posts(blog_dir)
+    current = catalog_path.read_text(encoding="utf-8") if catalog_path.exists() else "# Published Work\n\n"
+    catalog_path.write_text(sync_catalog(current, posts), encoding="utf-8")
+    tagged = sum(1 for p in posts if p.theme_id)
+    print(f"Synced {len(posts)} posts from {blog_dir.name} "
+          f"({tagged} theme-tagged) → catalog.md")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="radar_memory")
-    parser.add_argument("command", choices=["resolve", "eval", "contrarian", "lineage"])
+    parser.add_argument(
+        "command",
+        choices=["resolve", "eval", "contrarian", "lineage", "catalog-sync"])
     args = parser.parse_args()
     {
         "resolve": cmd_resolve,
         "eval": cmd_eval,
         "contrarian": cmd_contrarian,
         "lineage": cmd_lineage,
+        "catalog-sync": cmd_catalog_sync,
     }[args.command]()
 
 

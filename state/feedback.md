@@ -21,4 +21,4 @@
 
 ---
 
-(Feedback entries will appear here as digests are processed)
+2026-06-26 | "Slow down to speed up" meta-take | Pass | Trend already going mainstream (Pragmatic Engineer ran it 3x after the contrarian flag), so no edge left in a post. Call was already won in public. Specs takes the next slot instead.

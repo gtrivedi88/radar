@@ -40,7 +40,8 @@
       "Bash(.venv/bin/python -m radar_memory eval)",
       "Bash(.venv/bin/python -m radar_memory lineage)",
       "Bash(.venv/bin/python -m radar_memory contrarian)",
-      "Bash(python3 -c \"import sys,json; [print\\(' ',json.loads\\(l\\)['theme_id'],'cyc',json.loads\\(l\\)['cycle_count']\\) for l in sys.stdin]\")"
+      "Bash(python3 -c \"import sys,json; [print\\(' ',json.loads\\(l\\)['theme_id'],'cyc',json.loads\\(l\\)['cycle_count']\\) for l in sys.stdin]\")",
+      "Bash(.venv/bin/python -)"
     ],
     "additionalDirectories": [
       "/home/gtrivedi/Documents/GitHub/radar"

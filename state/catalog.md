@@ -3,7 +3,7 @@
 > Auto-generated from `_posts/` in the blog repo (manual paste OK for v0). Synthesis must never re-suggest a topic already covered here.
 
 ## Blog Posts (sorted by date, most recent first)
-- (none yet — paste entries here as YYYY-MM-DD | title | url)
+- 2026-06-27 | The Trust Layer Nobody Built | /trust-layer-nobody-built/ (theme: agent_trust_authorization)
 - (example: 2026-05-20 | Building Elite Intelligence Systems | /elite-intelligence-systems/)
 
 ## Courses

@@ -6,7 +6,9 @@
 - 2026-05-28 | Radar v0 implementation | Building world-class personal intelligence system
 
 ## Queued (interested, not started)  
-- 2026-06-26 | "Your Specs Are the New Source Code" | .md-native spec/intent-driven dev as the new center of gravity. ACT NOW #1 (agent_memory_spec_driven). tech_writer primary.
+- 2026-06-26 | "Your Specs Are the New Source Code" | .md-native spec/intent-driven dev. ACT NOW #1 (agent_memory_spec_driven). tech_writer primary. Durable + uncontested, schedules anytime. = "Memory" pillar of the Agent Operations course.
+- 2026-06-26 | "Slow down to speed up" meta-take | ACT NOW #3 (ai_velocity_trap). TIME-SENSITIVE: going consensus fast — write it next (07-03) to keep the "I called it" edge, or Pass. Loses value if it waits past next cycle.
+- 2026-06-26 | Course landing page: "Agent Operations — Trust, Memory, Cost" | Emergent from the weekly blogs (Trust pillar ✅ written). Ship the validation page once 2 of 3 pillars are live. Not separate build work.
 - Elite Claude Code workflow patterns
 - Advanced predictive intelligence methodologies
 - Personal knowledge management automation
